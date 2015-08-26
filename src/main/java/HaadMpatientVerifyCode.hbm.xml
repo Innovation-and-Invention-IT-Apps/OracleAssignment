@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+	<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+	
+<hibernate-mapping>
+	
+	  <class name="org.bs5lndk.persistent.beans.HaadMpatientVerifyCode" table="haad_mpatient_verify_code">
+	  
+	      <id name="id" type="int">
+	            <generator class="increment"/>
+	      </id>
+	      
+	      <property name="mobile_number" column="mobile_number" type="string"/>
+	      <property name="unique_code" column="unique_code" type="string"/>
+	      <property name="imei_number" column="imei_number" type="string"/>
+	      <property name="added_on" column="added_on" type="string"/>
+	      <property name="modified_on" column="modified_on" type="string"/>
+	      <property name="status" column="status" type="string"/>
+	
+	  </class>
+	  
+</hibernate-mapping>
