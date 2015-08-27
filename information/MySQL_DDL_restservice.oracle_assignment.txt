@@ -1,0 +1,5 @@
+CREATE TABLE restserver.`oracle_assignment` (
+  `id` int(11) NOT NULL,
+  `data` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
