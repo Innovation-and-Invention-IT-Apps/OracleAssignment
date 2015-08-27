@@ -16,7 +16,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.bs5lndk.persistent.beans.HaadMpatientVerifyCode;
+import org.bs5lndk.persistent.beans.EventsBean;
 import org.bs5lndk.persistent.service.DBEventsManager;
 import org.codehaus.jackson.map.ObjectMapper;
  
@@ -73,9 +73,8 @@ public class EventsManager {
 		if(index.length() > 0){
 			ObjectMapper mapper = new ObjectMapper();
 			try{
-		    	HaadMpatientVerifyCode hmvc = mapper.readValue(inputData, HaadMpatientVerifyCode.class);
-		    	hmvc.setId(Integer.parseInt(index));
-		    	output = DBEventsManager.getInstance().updateEvent(hmvc);
+		    	EventsBean hmvc = mapper.readValue(inputData, EventsBean.class);
+		    	output = DBEventsManager.getInstance().updateEvent(hmvc, index);
 		    }catch(IOException ioe){
 		    	System.out.println("Exception Occured: " + ioe.getMessage().toString());
 		    	ioe.printStackTrace();
@@ -95,7 +94,7 @@ public class EventsManager {
 		if(inputData.length() > 0){
 			ObjectMapper mapper = new ObjectMapper();
 			try{
-		    	HaadMpatientVerifyCode hmvc = mapper.readValue(inputData, HaadMpatientVerifyCode.class);
+		    	EventsBean hmvc = mapper.readValue(inputData, EventsBean.class);
 		    	output = DBEventsManager.getInstance().makeNewEvent(hmvc);
 		    }catch(IOException ioe){
 		    	System.out.println("Exception Occured: " + ioe.getMessage().toString());
@@ -109,12 +108,12 @@ public class EventsManager {
 	}
     
     @DELETE
-    @Consumes(MediaType.APPLICATION_JSON)
+    //@Consumes(MediaType.APPLICATION_JSON)
     @Path("/{resource}")
 	public Response deleteEvent() {
 		String output = "";
 		try{
-	    	output = DBEventsManager.getInstance().deleteEvent();
+	    	output = DBEventsManager.getInstance().deleteEvents();
 	    }catch(Exception e){
 	    	System.out.println("Exception Occured: " + e.getMessage().toString());
 	    	e.printStackTrace();

@@ -2,26 +2,16 @@
               <!DOCTYPE hibernate-configuration PUBLIC
               "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
               "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
-
 <hibernate-configuration>
-
      <session-factory>
-         <!-- <property name="connection.url">jdbc:sqlserver://127.0.0.1:1433;databaseName=HAADMobile;instance=ITLNB153\SQLEXPRESS;</property>
-         <property name="connection.username">sa</property>
-         <property name="connection.password">Delisha123</property>
-
-         <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-         <property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
-         <property name="current_session_context_class">thread</property> -->
-         
          <property name="connection.url">jdbc:mysql://localhost:3306/restserver</property>
          <property name="connection.username">root</property>
          <property name="connection.password">root</property>
-
          <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
          <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
          <property name="current_session_context_class">thread</property>
+         <property name="hibernate.show_sql">true</property>
      
-         <mapping resource="HaadMpatientVerifyCode.hbm.xml" />
+         <mapping resource="EventsBean.hbm.xml" />
       </session-factory>
 </hibernate-configuration>

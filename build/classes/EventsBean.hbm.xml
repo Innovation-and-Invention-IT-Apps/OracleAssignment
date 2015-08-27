@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+	<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	  <class name="org.bs5lndk.persistent.beans.EventsBean" table="oracle_assignment">
+	      <id name="id" type="int">
+	            <generator class="increment"/>
+	      </id>
+	      <property name="data" column="data" type="string"/>
+	  </class>
+</hibernate-mapping>
