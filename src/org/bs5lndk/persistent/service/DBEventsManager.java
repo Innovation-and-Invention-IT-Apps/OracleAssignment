@@ -30,7 +30,7 @@ public class DBEventsManager {
 		return instance;
 	}
 	
-	public static String makeNewEvent(EventsBean hmvc){
+	public String makeNewEvent(EventsBean hmvc){
 		try{
     		session = sessionFactory.openSession();
     		tx = session.beginTransaction();
@@ -46,7 +46,7 @@ public class DBEventsManager {
 		return status;
 	}
 	
-	public static String updateEvent(EventsBean hmvc, String index){
+	public String updateEvent(EventsBean hmvc, String index){
 		try{
 	        Iterator items = listEvent(index).iterator();
 	        while(items.hasNext()){
@@ -68,7 +68,7 @@ public class DBEventsManager {
         return status;
 	}
 	
-	public static List<EventsBean> listEvent(String index){
+	public List<EventsBean> listEvent(String index){
 		try{
     		session = sessionFactory.openSession();
     		tx = session.beginTransaction();
@@ -83,7 +83,7 @@ public class DBEventsManager {
         return result;
 	}
 	
-	public static List<EventsBean> listEvents(){
+	public List<EventsBean> listEvents(){
 		try{
     		session = sessionFactory.openSession();
     		tx = session.beginTransaction();
@@ -96,7 +96,7 @@ public class DBEventsManager {
         return result;
 	}
 	
-	public static String deleteEvent(String index){
+	public String deleteEvent(String index){
 		try{
     		session = sessionFactory.openSession();
     		tx = session.beginTransaction();
@@ -117,7 +117,7 @@ public class DBEventsManager {
         return status;
 	}
 	
-	public static String deleteEvents(){
+	public String deleteEvents(){
 		try{
     		session = sessionFactory.openSession();
     		tx = session.beginTransaction();
