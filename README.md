@@ -1,4 +1,10 @@
-# OracleAssignment
+# Oracle Job Assignment
+
+Introduction:
+
+            This was the project assigned by Oracle Inc., USA for the position of Senior Product Manager for its product Oracle Marketing Cloud for its Bangalore, India operations. I got selected for the position after around 9 rounds/levels of interviews and assessments but to my dismay, had to stick to my then current employer and could not join Oracle.
+            
+            So this is the project that I delivered to the technical team (OMC HOD/Product Owner).
 
 Assignment took around 5 hours to implement E2E functionality.
 
